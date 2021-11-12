@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import './App.css'
+import Header from './components/Header'
 import api from './service/api'
 
 function App() {
@@ -22,50 +22,50 @@ function App() {
   }, [])
 
   return (
-    <div>
-      <br />
-      <br />
+    <>
+      <Header />
 
-      <Link to="/register">Cadastro</Link>
-      <br />
-      <br />
-      <div className="App" style={{ display: 'grid', gridTemplateColumns: '2fr 2fr' }}>
-        {product.map((item) => (
-          <ul
-            key={item._id}
-            style={{
-              background: 'lightgray',
-              width: '90%',
-              height: '350px',
-              paddingTop: '50px',
-              borderRadius: '13px',
-              listStyle: 'none',
-              marginLeft: '17px',
-            }}
-          >
-            <li>
-              <img src={item.image} alt="imagem" width="180" />
-              <p>{item.image}</p>
-            </li>
-            <li>
-              Titulo:
-              {item.title}
-            </li>
-            <li>
-              Descrição:
-              {item.description}
-            </li>
+      <div>
+        <h1 style={{ marginLeft: '20px', marginTop: '20px' }}>E-Comerce Products</h1>
 
-            <li>
-              Preço:
-              {item.price}
-            </li>
-          </ul>
-        ))}
+        <div className="App" style={{ display: 'grid', gridTemplateColumns: '2fr 2fr' }}>
+          {product.map((item) => (
+            <ul
+              key={item._id}
+              style={{
+                background: 'lightgray',
+                width: '90%',
+                height: '350px',
+                paddingTop: '50px',
+                borderRadius: '13px',
+                listStyle: 'none',
+                marginLeft: '17px',
+              }}
+            >
+              <li>
+                <img src={item.image} alt="imagem" width="180" />
+                <p>{item.image}</p>
+              </li>
+              <li>
+                Titulo:
+                {item.title}
+              </li>
+              <li>
+                Descrição:
+                {item.description}
+              </li>
 
-        <header className="App-header"></header>
+              <li>
+                Preço:
+                {item.price}
+              </li>
+            </ul>
+          ))}
+
+          <header className="App-header"></header>
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 
