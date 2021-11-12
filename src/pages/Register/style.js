@@ -41,7 +41,7 @@ export const Input = styled.input`
   padding-left: 15px;
 
   @media screen and (max-width: 700px) {
-    width: 284px;
+    width: 224px;
   }
 `
 export const H1 = styled.h1`
