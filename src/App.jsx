@@ -33,7 +33,7 @@ function App() {
             <ul
               key={item._id}
               style={{
-                background: 'lightgray',
+                background: '#e6e6e6',
                 width: '90%',
                 height: '350px',
                 paddingTop: '50px',

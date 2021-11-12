@@ -57,7 +57,7 @@ export default function Register() {
             }}
           >
             <br />
-
+            <p>Selecione a Imagem</p>
             <input
               type="file"
               id="image"
@@ -66,35 +66,102 @@ export default function Register() {
             />
             <br />
 
-            <label>Nome: </label>
+            <label
+              style={{
+                display: 'flex',
+                marginLeft: '-342px',
+                marginTop: '10px',
+                marginBottom: '8px',
+              }}
+            >
+              Nome:{' '}
+            </label>
             <input
-              // placeholder="Digite o Nome do Produto"
+              placeholder="Digite o Nome do Produto"
               id="title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
+              style={{
+                height: '45px',
+                width: '390px',
+                border: '1px solid #a6a6a6',
+                borderRadius: '10px',
+                background: '#e6ffe6',
+                fontSize: '16px',
+                paddingLeft: '15px',
+              }}
             />
             <br />
 
-            <label>Preço: </label>
+            <label
+              style={{
+                display: 'flex',
+                marginTop: '6px',
+                marginLeft: '-342px',
+                marginBottom: '8px',
+              }}
+            >
+              Preço:{' '}
+            </label>
             <input
-              // placeholder="Digite o Preço do Produto"
+              placeholder="Digite o Preço do Produto"
+              style={{
+                height: '45px',
+                width: '390px',
+                border: '1px solid #a6a6a6',
+                borderRadius: '10px',
+                background: '#e6ffe6',
+                fontSize: '16px',
+                paddingLeft: '15px',
+              }}
               id="price"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
             />
             <br />
 
-            <label>Descrição: </label>
+            <label
+              style={{
+                display: 'flex',
+                marginTop: '6px',
+
+                marginLeft: '-318px',
+                marginBottom: '8px',
+              }}
+            >
+              Descrição:
+            </label>
             <input
-              // placeholder="Digite o Preço do Produto"
+              placeholder="Digite a Descrição do Produto"
               id="description"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
+              style={{
+                height: '45px',
+                width: '390px',
+                border: '1px solid #a6a6a6',
+                borderRadius: '10px',
+                background: '#e6ffe6',
+                fontSize: '16px',
+                paddingLeft: '15px',
+              }}
             />
             <br />
-            <br />
 
-            <button className="confirm-button" type="submit">
+            <button
+              style={{
+                borderRadius: '10px',
+                background: '#008080',
+                width: '100%',
+                height: '38px',
+                color: 'white',
+                cursor: 'pointer',
+                fontWeight: 'bold',
+                fontSize: '14px',
+              }}
+              className="confirm-button"
+              type="submit"
+            >
               Cadastrar
             </button>
           </div>

@@ -8,7 +8,7 @@ export default function Header() {
         display: 'flex',
         flex: '1',
         alignItems: 'center',
-        background: '#00b359',
+        background: '#009999',
         color: 'white',
         width: '100vw',
         height: '40px',
