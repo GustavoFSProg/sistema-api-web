@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import api from '../../service/api'
 import Header from '../../components/Header'
+import { FormContainer, Container, Input, H1 } from './style'
 
 export default function Register() {
   const [title, setTitle] = useState('')
@@ -33,29 +34,15 @@ export default function Register() {
   return (
     <>
       <Header />
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
+      <Container>
         <br />
         <br />
 
-        <h1>Cadastro de Produtos</h1>
+        <H1>Cadastro de Produtos </H1>
         <br />
 
-        <form onSubmit={handleSubmit}>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
+        <FormContainer>
+          <form onSubmit={handleSubmit}>
             <br />
             <p>Selecione a Imagem</p>
             <input
@@ -65,55 +52,36 @@ export default function Register() {
               onChange={(e) => setImage(e.target.files[0])}
             />
             <br />
+            <br />
 
             <label
               style={{
                 display: 'flex',
-                marginLeft: '-342px',
                 marginTop: '10px',
                 marginBottom: '8px',
               }}
             >
-              Nome:{' '}
+              Nome:
             </label>
-            <input
+            <Input
               placeholder="Digite o Nome do Produto"
               id="title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              style={{
-                height: '45px',
-                width: '390px',
-                border: '1px solid #a6a6a6',
-                borderRadius: '10px',
-                background: '#e6ffe6',
-                fontSize: '16px',
-                paddingLeft: '15px',
-              }}
             />
             <br />
 
             <label
               style={{
                 display: 'flex',
-                marginTop: '6px',
-                marginLeft: '-342px',
+                marginTop: '18px',
                 marginBottom: '8px',
               }}
             >
-              Preço:{' '}
+              Preço:
             </label>
-            <input
+            <Input
               placeholder="Digite o Preço do Produto"
-              style={{
-                height: '45px',
-                width: '390px',
-                border: '1px solid #a6a6a6',
-                borderRadius: '10px',
-                background: '#e6ffe6',
-                fontSize: '16px',
-                paddingLeft: '15px',
-              }}
               id="price"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
@@ -123,29 +91,19 @@ export default function Register() {
             <label
               style={{
                 display: 'flex',
-                marginTop: '6px',
-
-                marginLeft: '-318px',
+                marginTop: '18px',
                 marginBottom: '8px',
               }}
             >
               Descrição:
             </label>
-            <input
+            <Input
               placeholder="Digite a Descrição do Produto"
               id="description"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              style={{
-                height: '45px',
-                width: '390px',
-                border: '1px solid #a6a6a6',
-                borderRadius: '10px',
-                background: '#e6ffe6',
-                fontSize: '16px',
-                paddingLeft: '15px',
-              }}
             />
+            <br />
             <br />
 
             <button
@@ -164,9 +122,9 @@ export default function Register() {
             >
               Cadastrar
             </button>
-          </div>
-        </form>
-      </div>
+          </form>
+        </FormContainer>
+      </Container>
     </>
   )
 }

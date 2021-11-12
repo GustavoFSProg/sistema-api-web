@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import Header from './components/Header'
 import api from './service/api'
+import { Ul, Wrapper } from './style'
 
 function App() {
   const [product, setProduct] = useState([])
@@ -28,23 +29,11 @@ function App() {
       <div>
         <h1 style={{ marginLeft: '20px', marginTop: '20px' }}>E-Comerce Products</h1>
 
-        <div className="App" style={{ display: 'grid', gridTemplateColumns: '2fr 2fr' }}>
+        <Wrapper>
           {product.map((item) => (
-            <ul
-              key={item._id}
-              style={{
-                background: '#e6e6e6',
-                width: '90%',
-                height: '350px',
-                paddingTop: '50px',
-                borderRadius: '13px',
-                listStyle: 'none',
-                marginLeft: '17px',
-              }}
-            >
+            <Ul key={item._id}>
               <li>
                 <img src={item.image} alt="imagem" width="180" />
-                <p>{item.image}</p>
               </li>
               <li>
                 Titulo:
@@ -59,11 +48,11 @@ function App() {
                 Preço:
                 {item.price}
               </li>
-            </ul>
+            </Ul>
           ))}
 
           <header className="App-header"></header>
-        </div>
+        </Wrapper>
       </div>
     </>
   )
